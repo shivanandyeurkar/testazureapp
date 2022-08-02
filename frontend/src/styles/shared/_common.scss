@@ -1,8 +1,7 @@
-@import '../import';
+// @import '../import';
 
 body {
-  font-family: Poppins, sans-serif;
-  background-color: $color-gray-teal;
+  font-family: Causten, sans-serif;
 }
 
 .--flex-center {
@@ -22,11 +21,4 @@ body {
 .--pad-margin-0 {
   margin: 0;
   padding: 0;
-}
-
-@each $tag, $value in $heading-fonts {
-  #{$tag} {
-    font-size: map-get($value, font-size);
-    line-height: map-get($value, line-height);
-  }
 }

@@ -1,0 +1,126 @@
+@import '../../styles/import';
+.results {
+  margin: auto;
+  &__layout {
+    padding: 4.2rem 4.8rem;
+  }
+  &__text {
+    margin-bottom: 2.4rem;
+    @include flex(flex, row, space-between, center);
+  }
+  &__section {
+    h6 {
+      font-family: $primary-font-family;
+      font-weight: map-get($font-weights, semi-bold);
+      font-size: map-get($font-sizes, smaller);
+      line-height: map-get($line-heights, medium);
+      color: $color-primary;
+    }
+    h2 {
+      font-family: $primary-font-family;
+      font-weight: map-get($font-weights, medium);
+      font-size: map-get($font-sizes, bigger);
+      line-height: map-get($line-heights, bigger);
+      color: $color-gray-charcoal;
+      border-bottom: 1px solid $color-border-grey;
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  &__content {
+    @include flex(flex, row, center, $gap: 2.6rem);
+  }
+  &__bar__container {
+    @include flex(flex, column, space-between);
+  }
+  &__container__fluid {
+    @include flex(flex, row, center);
+    margin-top: 3.2rem;
+
+    & > *:not(:last-child) {
+      margin-right: 2.5rem;
+    }
+  }
+  &__chart {
+    margin-top: 1.2rem;
+    font-family: $font-family !important;
+    font-weight: map-get($font-weights, normal);
+    font-size: map-get($font-sizes, micro) !important;
+    line-height: map-get($line-heights, micro);
+  }
+}
+@include break(map-get($grid-breakpoints, xxl)) {
+  .results {
+    margin: auto;
+    max-width: 1500px;
+  }
+}
+@include break(map-get($container-max-widths, xxl)) {
+  .results {
+    margin: auto;
+    width: 100%;
+  }
+}
+@include break(map-get($grid-breakpoints, lg-xl)) {
+  .results {
+    margin: auto;
+    width: 100%;
+    &__layout {
+      padding: 3.2rem 3.6rem 0 3.6rem;
+    }
+    &__container__fluid {
+      @include flex(flex, row, center);
+    }
+    &__text {
+      display: block;
+    }
+    &__button {
+      margin-top: 2.4rem;
+    }
+    &__content {
+      display: block;
+    }
+  }
+}
+@include break(map-get($grid-breakpoints, md)) {
+  .results {
+    margin: auto;
+    width: 100%;
+    &__container {
+      display: block;
+    }
+    &__text {
+      display: block;
+    }
+  }
+}
+@include break(map-get($grid-breakpoints, sm)) {
+  .results {
+    &__layout {
+      padding: 0;
+    }
+    &__container {
+      padding: 4.2rem 1.6rem 0 1.6rem;
+    }
+    &__section {
+      h6 {
+        font-size: map-get($font-sizes, smallest);
+        line-height: map-get($line-heights, smallest);
+      }
+      h2 {
+        font-size: map-get($font-sizes, biggest);
+        line-height: map-get($line-heights, big);
+        padding-bottom: 8px;
+      }
+    }
+    &__container__fluid {
+      @include flex(flex, column, center, center);
+      margin-top: 0px;
+      gap: 4rem;
+
+      & > * {
+        margin-right: 0 !important;
+      }
+    }
+  }
+}

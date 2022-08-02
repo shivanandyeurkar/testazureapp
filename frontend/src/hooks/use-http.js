@@ -1,44 +1,40 @@
-import { useCallback, useState } from 'react';
+import { useState, useCallback } from 'react';
 
-const useHttp = transform => {
+const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [httpError, setHttpError] = useState('');
 
-  const sendHttpRequest = useCallback(
-    async requestConfig => {
-      setIsLoading(true);
-      setHttpError('');
-      const headers = { ...requestConfig.headers, Authorization: localStorage.getItem('tokenId') };
-      let response;
+  const sendRequest = useCallback(async (requestConfig, transform) => {
+    setIsLoading(true);
+    setHttpError('');
+    const headers = { ...requestConfig.headers, 'Content-Type': 'application/json' };
 
-      try {
-        response = await fetch(requestConfig.APIEndpoint, {
-          method: requestConfig.method ? requestConfig.method : 'GET',
-          headers,
-          body: requestConfig.body ? JSON.stringify(requestConfig.body) : null
-        });
+    try {
+      const response = await fetch(requestConfig.url, {
+        body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
+        method: requestConfig.method ? requestConfig.method : 'GET',
+        headers
+      });
 
-        if (!response.ok) {
-          const message = await response.json();
-          throw new Error(`${message.message}. RESPONSE CODE: ${response.status}.`);
-        }
-
-        const data = await response.json();
-
-        transform(data);
-        setIsLoading(false);
-      } catch (err) {
-        setHttpError({ message: err.toString(), statusCode: response.status });
-        setIsLoading(false);
+      if (!response.ok) {
+        const errorMessage = await response.json();
+        throw new Error(`Error: ${errorMessage}. Status Code: ${response.status}`);
       }
-    },
-    [transform]
-  );
+
+      const data = await response.json();
+
+      transform(data);
+    } catch (error) {
+      setHttpError(error);
+    }
+
+    setIsLoading(false);
+  }, []);
 
   return {
+    sendRequest,
     isLoading,
-    httpError,
-    sendHttpRequest
+    httpError
   };
 };
 

@@ -1,16 +1,19 @@
 $grid-breakpoints: (
-  xs: 0,
+  xs: 400px,
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  lg-xl: 1200px,
+  xl: 1400px,
+  xxl: 2000px
 );
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   ls: 960px,
-  xl: 1140px
+  xl: 1140px,
+  xxl: 1500px
 ) !default;
 
 $navigation-break: map-get($grid-breakpoints, md);

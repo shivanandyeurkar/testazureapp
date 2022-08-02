@@ -1,0 +1,162 @@
+@import '../../styles/import';
+.verticalbar {
+  width: 20.4rem;
+  height: 45rem;
+  padding: 1.3rem 1.7rem;
+  border-radius: 2.1rem;
+  @include flex($dir: column, $jc: space-between);
+
+  &__element {
+    width: 100%;
+    height: min-content;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    font-family: $primary-font-family;
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, smallest);
+    line-height: map-get($line-heights, smallest);
+    text-align: center;
+    color: $color-primary;
+  }
+  &__amount {
+    font-family: $primary-font-family;
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, smallest);
+    line-height: map-get($line-heights, smallest);
+    text-align: center;
+    color: $color-black;
+  }
+  &__value {
+    font-family: $font-family;
+    font-weight: map-get($font-weights, normal);
+    font-size: map-get($font-sizes, smaller);
+    line-height: map-get($line-heights, medium);
+    text-align: center;
+    color: $color-gray-charcoal;
+  }
+
+  &__rectangle {
+    flex: 1 0 0;
+    @include flex($dir: column, $jc: flex-end);
+  }
+
+  &__rectangle-container {
+    // margin-top: auto;
+    // @include flex($dir: column);
+  }
+
+  &__rectangle-element {
+    // padding: 0.7rem;
+    @include flex(flex, column, center, center);
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    // overflow-y: hidden;
+
+    // &:not(:first-child) {
+    //   margin-top: -7px;
+    // }
+
+    &:last-child {
+      // padding: 0.5rem 1.8rem 1rem 1.8rem;
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: calc(100% - 0.7rem);
+      left: 0;
+      display: inline-block;
+      height: 1.4rem;
+      width: 100%;
+      background-color: currentColor;
+    }
+  }
+
+  &__rectangle-hover {
+    padding: 0.7rem 2rem;
+    background-color: $color-gray-light;
+    color: $color-gray-charcoal;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 1.5rem);
+    transform: translateY(-50%);
+    box-shadow: 0 0 1rem -3px rgba(black, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms ease-out;
+    pointer-events: none;
+
+    @include respond(mobile) {
+      top: 0;
+      right: 50%;
+      transform: translate(50%, calc(-100% - 1rem));
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      border: 1rem solid transparent;
+      border-right: none;
+      border-left-color: $color-gray-light;
+
+      @include respond(mobile) {
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -1px);
+        border: 1rem solid transparent;
+        border-bottom: none;
+        border-top-color: $color-gray-light;
+      }
+    }
+  }
+
+  &__rectangle-element:hover > &__rectangle-hover {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__rectangle__value {
+    font-family: $primary-font-family;
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, medium);
+    // line-height: map-get($line-heights, big);
+    color: $color-light-gray;
+  }
+
+  &__rectangle__department {
+    font-family: $primary-font-family;
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, micro);
+    // line-height: map-get($line-heights, micro);
+    text-align: center;
+    color: $color-light-gray;
+  }
+}
+@include break(map-get($grid-breakpoints, sm)) {
+  .verticalbar {
+    &__container {
+      margin-right: 0px !important ;
+      margin-top: 2.4rem;
+    }
+    &__value {
+      margin-bottom: 3.2rem;
+    }
+  }
+}
+
+@include break(map-get($grid-breakpoints, md)) {
+  .verticalbar {
+    &__rectangle__element {
+      margin-top: -5px;
+    }
+  }
+}

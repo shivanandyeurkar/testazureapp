@@ -1,0 +1,68 @@
+@import '../../styles/import';
+
+.radio-group {
+  width: 100%;
+
+  &__heading {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    color: $color-gray-concreate;
+    margin-bottom: 0.8rem;
+  }
+
+  &__options {
+    display: flex;
+
+    & > * + * {
+      margin-left: 3.2rem;
+    }
+  }
+
+  &__group {
+    @include flex($ai: center);
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__label-box {
+    display: flex;
+    align-items: center;
+
+    & > * + * {
+      margin-left: 4px;
+    }
+
+    @include respond(mobile) {
+      & > * + * {
+        margin-left: 0.8rem;
+      }
+    }
+  }
+
+  &__radio-proxy {
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    border: 1px solid $color-gray-concreate;
+    padding: 3px;
+    background-clip: content-box;
+    transition: background-color 100ms ease-in;
+    cursor: pointer;
+  }
+
+  &__radio:checked + &__label-box &__radio-proxy {
+    background-color: $color-primary;
+  }
+
+  &__label {
+    cursor: pointer;
+    font-family: Noto Sans, sans-serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 400;
+    color: $color-gray-charcoal;
+  }
+}

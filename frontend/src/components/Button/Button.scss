@@ -1,51 +1,55 @@
 @import '../../styles/import';
 
-.btn {
-  font-family: Public Sans;
-  font-weight: 400;
-  border-radius: 0.5rem;
-  height: 4.6rem;
-  cursor: pointer;
+.button {
+  height: 4rem;
+  text-align: center;
   font-size: 1.6rem;
-  line-height: 2.2rem;
-  box-sizing: border-box;
-  padding: 0 2.2rem;
-  display: flex;
-  align-items: center;
+  line-height: 2.4rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: transform 100ms ease-in;
 
   &--primary {
-    background-color: transparent;
-    color: $color-primary;
-    border: 1px solid $color-primary;
-    transition: transform 50ms ease-in;
-
-    &:active {
-      transform: scale((0.9));
-    }
+    color: $color-white;
+    background-color: $color-primary;
   }
 
   &--primary-disabled {
-    background-color: transparent;
-    color: $color-gray-mid;
-    border: 1px solid $color-gray-mid;
+    color: $color-white;
+    background-color: $color-gray-concreate;
     cursor: not-allowed;
   }
 
   &--secondary {
-    background-color: $color-primary;
-    color: $color-gray-white;
-    border: transparent;
-    transition: transform 50ms ease-in;
-
-    &:active {
-      transform: scale((0.9));
-    }
+    color: $color-gray-charcoal;
+    background-color: $color-white;
+    border: 1px solid $color-gray-charcoal;
   }
 
   &--secondary-disabled {
-    background-color: $color-gray-mid;
-    color: $color-gray-white;
-    border: transparent;
+    color: $color-gray-charcoal;
+    background-color: $color-gray-concreate;
     cursor: not-allowed;
   }
+
+  &--free-size {
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  &--fixed-size {
+    padding: 0.8rem 3rem;
+    width: auto;
+  }
+
+  // &--disabled {
+  //   background-color: $color-gray-concreate;
+  // }
+
+  // &--enabled {
+  //   &:active {
+  //     transform: scale(0.9, 0.95);
+  //   }
+  // }
 }

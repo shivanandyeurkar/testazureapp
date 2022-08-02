@@ -1,2 +1,5 @@
-export const SomeConst = 'same';
-export const SomeCOnst2 = 'same';
+export const RECTANGLE_CLOUD_COLOR = '#304CB4';
+export const RECTANGLE_PREMISE_COLOR = '#0EA3C6';
+export const RECTANGLE_BLACK_COLOR = '#1A1A1A';
+export const RECTANGLE_BLUE_COLOR = '#25C9EF';
+export const RECTANGLE_ZETBLACK_COLOR = '#85898C';

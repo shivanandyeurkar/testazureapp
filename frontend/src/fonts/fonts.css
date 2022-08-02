@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-Bold.eot');
+  src: url('Causten-Bold.eot?#iefix') format('embedded-opentype'),
+    url('Causten-Bold.woff2') format('woff2'), url('Causten-Bold.woff') format('woff'),
+    url('Causten-Bold.ttf') format('truetype'), url('Causten-Bold.svg#Causten-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-Black.eot');
+  src: url('Causten-Black.eot?#iefix') format('embedded-opentype'),
+    url('Causten-Black.woff2') format('woff2'), url('Causten-Black.woff') format('woff'),
+    url('Causten-Black.ttf') format('truetype'),
+    url('Causten-Black.svg#Causten-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-BlackOblique';
+  src: url('Causten-BlackOblique.eot');
+  src: url('Causten-BlackOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-BlackOblique.woff2') format('woff2'),
+    url('Causten-BlackOblique.woff') format('woff'),
+    url('Causten-BlackOblique.ttf') format('truetype'),
+    url('Causten-BlackOblique.svg#Causten-BlackOblique') format('svg');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-ExtraBold.eot');
+  src: url('Causten-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('Causten-ExtraBold.woff2') format('woff2'), url('Causten-ExtraBold.woff') format('woff'),
+    url('Causten-ExtraBold.ttf') format('truetype'),
+    url('Causten-ExtraBold.svg#Causten-ExtraBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-BoldOblique';
+  src: url('Causten-BoldOblique.eot');
+  src: url('Causten-BoldOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-BoldOblique.woff2') format('woff2'), url('Causten-BoldOblique.woff') format('woff'),
+    url('Causten-BoldOblique.ttf') format('truetype'),
+    url('Causten-BoldOblique.svg#Causten-BoldOblique') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-ExtraBoldOblique';
+  src: url('Causten-ExtraBoldOblique.eot');
+  src: url('Causten-ExtraBoldOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-ExtraBoldOblique.woff2') format('woff2'),
+    url('Causten-ExtraBoldOblique.woff') format('woff'),
+    url('Causten-ExtraBoldOblique.ttf') format('truetype'),
+    url('Causten-ExtraBoldOblique.svg#Causten-ExtraBoldOblique') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-Light.eot');
+  src: url('Causten-Light.eot?#iefix') format('embedded-opentype'),
+    url('Causten-Light.woff2') format('woff2'), url('Causten-Light.woff') format('woff'),
+    url('Causten-Light.ttf') format('truetype'),
+    url('Causten-Light.svg#Causten-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-ExtraLight.eot');
+  src: url('Causten-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('Causten-ExtraLight.woff2') format('woff2'), url('Causten-ExtraLight.woff') format('woff'),
+    url('Causten-ExtraLight.ttf') format('truetype'),
+    url('Causten-ExtraLight.svg#Causten-ExtraLight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-ExtraLightOblique';
+  src: url('Causten-ExtraLightOblique.eot');
+  src: url('Causten-ExtraLightOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-ExtraLightOblique.woff2') format('woff2'),
+    url('Causten-ExtraLightOblique.woff') format('woff'),
+    url('Causten-ExtraLightOblique.ttf') format('truetype'),
+    url('Causten-ExtraLightOblique.svg#Causten-ExtraLightOblique') format('svg');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-LightOblique';
+  src: url('Causten-LightOblique.eot');
+  src: url('Causten-LightOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-LightOblique.woff2') format('woff2'),
+    url('Causten-LightOblique.woff') format('woff'),
+    url('Causten-LightOblique.ttf') format('truetype'),
+    url('Causten-LightOblique.svg#Causten-LightOblique') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-Medium.eot');
+  src: url('Causten-Medium.eot?#iefix') format('embedded-opentype'),
+    url('Causten-Medium.woff2') format('woff2'), url('Causten-Medium.woff') format('woff'),
+    url('Causten-Medium.ttf') format('truetype'),
+    url('Causten-Medium.svg#Causten-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-MediumOblique';
+  src: url('Causten-MediumOblique.eot');
+  src: url('Causten-MediumOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-MediumOblique.woff2') format('woff2'),
+    url('Causten-MediumOblique.woff') format('woff'),
+    url('Causten-MediumOblique.ttf') format('truetype'),
+    url('Causten-MediumOblique.svg#Causten-MediumOblique') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-Regular.eot');
+  src: url('Causten-Regular.eot?#iefix') format('embedded-opentype'),
+    url('Causten-Regular.woff2') format('woff2'), url('Causten-Regular.woff') format('woff'),
+    url('Causten-Regular.ttf') format('truetype'),
+    url('Causten-Regular.svg#Causten-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-SemiBold.eot');
+  src: url('Causten-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('Causten-SemiBold.woff2') format('woff2'), url('Causten-SemiBold.woff') format('woff'),
+    url('Causten-SemiBold.ttf') format('truetype'),
+    url('Causten-SemiBold.svg#Causten-SemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-RegularOblique';
+  src: url('Causten-RegularOblique.eot');
+  src: url('Causten-RegularOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-RegularOblique.woff2') format('woff2'),
+    url('Causten-RegularOblique.woff') format('woff'),
+    url('Causten-RegularOblique.ttf') format('truetype'),
+    url('Causten-RegularOblique.svg#Causten-RegularOblique') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten';
+  src: url('Causten-Thin.eot');
+  src: url('Causten-Thin.eot?#iefix') format('embedded-opentype'),
+    url('Causten-Thin.woff2') format('woff2'), url('Causten-Thin.woff') format('woff'),
+    url('Causten-Thin.ttf') format('truetype'), url('Causten-Thin.svg#Causten-Thin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-SemiBoldOblique';
+  src: url('Causten-SemiBoldOblique.eot');
+  src: url('Causten-SemiBoldOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-SemiBoldOblique.woff2') format('woff2'),
+    url('Causten-SemiBoldOblique.woff') format('woff'),
+    url('Causten-SemiBoldOblique.ttf') format('truetype'),
+    url('Causten-SemiBoldOblique.svg#Causten-SemiBoldOblique') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Causten-ThinOblique';
+  src: url('Causten-ThinOblique.eot');
+  src: url('Causten-ThinOblique.eot?#iefix') format('embedded-opentype'),
+    url('Causten-ThinOblique.woff2') format('woff2'), url('Causten-ThinOblique.woff') format('woff'),
+    url('Causten-ThinOblique.ttf') format('truetype'),
+    url('Causten-ThinOblique.svg#Causten-ThinOblique') format('svg');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,20 @@
+{
+  "WATT_PER_HOUR": {
+    "1-20": 850,
+    "21-50": 1000,
+    "51-75": 1250,
+    "76-100": 1500,
+    "101-125": 1750,
+    "126-150": 2000,
+    "151-175": 2250,
+    "176-200": 2500,
+    "201-400": 2750
+  },
+  "AVERAGE_KWH_COST": 0.104,
+  "DATA_BACKUP_COST": 200,
+  "DOCUMENT_MANAGEMENT_COST_PER_USER": 8,
+  "A": 495,
+  "B": 120,
+  "CLOUD_SUBSCRIPTION_FEE_PER_USER": 65,
+  "HOURS_PER_DAY": 24
+}

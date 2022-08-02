@@ -1,57 +1,25 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import Form from '../../components/Form/Form';
 
-import AppLayout from '../../containers/layout/AppLayout';
-import ProjectDetailsForm from '../../components/ProjectDetailsForm/ProjectDetailsForm';
-import ProductsForm from '../../components/ProductsForm/ProductsForm';
 import './Home.scss';
 
-const Home = () => {
-  const formData = useSelector(state => state.form);
-  const showProductsForm =
-    formData.projectName && formData.spec && formData.location && formData.city;
-
-  // const collapseAllDropDown = event => {
-  //   const selectorElement = event.target.closest('.drop-down__selection-container');
-
-  //   if (!selectorElement) {
-  //     setJobSpec(false);
-  //     setProjectLocation(false);
-  //     setCity(false);
-  //   } else {
-  //     switch (selectorElement.getAttribute('data-id')) {
-  //       case 'Job Spec':
-  //         setProjectLocation(false);
-  //         setCity(false);
-  //         break;
-  //       case 'Project Location':
-  //         setJobSpec(false);
-  //         setCity(false);
-  //         break;
-  //       case 'City':
-  //         setJobSpec(false);
-  //         setProjectLocation(false);
-  //         break;
-  //     }
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.body.addEventListener('click', collapseAllDropDown);
-  //   return () => {
-  //     window.removeEventListener('click', collapseAllDropDown);
-  //   };
-  // }, []);
-
-  return (
-    <AppLayout>
-      <div className="home">
-        <ProjectDetailsForm />
-
-        {showProductsForm && <ProductsForm jobSpec={formData.spec} />}
+const Home = () => (
+  <main className="home">
+    <div className="home__content-container">
+      <div className="home__introduction">
+        <h1 className="home__heading-primary">
+          <span className="home__heading-top">Cloud Transition</span>
+          <span className="home__heading-bottom">ROI Calculator</span>
+        </h1>
+        <h3 className="home__heading-secondary">
+          See how much you can save by transitioning to Neos
+        </h3>
       </div>
-    </AppLayout>
-  );
-};
+      <div className="home__form-container">
+        <Form />
+      </div>
+    </div>
+  </main>
+);
 
 export default Home;

@@ -1,4 +1,85 @@
 @import '../../styles/import';
 
 .home {
+  padding: 5.8rem 0 5.8rem;
+  min-height: 100vh;
+  background-image: url('../../assets/home-background.png');
+  background-size: cover;
+
+  @include respond(tablet) {
+    padding: 5.8rem 3.6rem;
+  }
+
+  @include respond(mobile) {
+    padding: 2.4rem 1.6rem;
+  }
+
+  &__content-container {
+    max-width: 85rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond(tablet) {
+      width: 100%;
+    }
+
+    @include respond(mobile) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+
+      & > * + * {
+        margin-top: 3.2rem;
+      }
+    }
+  }
+
+  &__heading-primary {
+    font-size: 5.8rem;
+    line-height: 6.4rem;
+    font-weight: 400;
+
+    @include respond(tablet) {
+      font-size: 4rem;
+      line-height: 4.8rem;
+    }
+  }
+
+  &__heading-top {
+    color: $color-white;
+    display: block;
+  }
+
+  &__heading-bottom {
+    color: $color-primary;
+    display: block;
+  }
+
+  &__heading-secondary {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-family: Noto Sans, sans-serif;
+    font-weight: 400;
+    color: $color-light-gray;
+    border-bottom: 1px solid $color-gray-light;
+    padding-bottom: 1.2rem;
+    margin-top: 1.6rem;
+
+    @include respond(tablet) {
+      max-width: 33.7rem;
+    }
+  }
+
+  &__form-container {
+    flex: 0 0 auto;
+  }
+}
+@include break(map-get($container-max-widths, xl)) {
+  .home {
+    &__content-container {
+      max-width: 78rem;
+    }
+  }
 }

@@ -1,0 +1,37 @@
+@import '../../styles/import';
+
+.inline-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-family: $font-family;
+
+  &__label {
+    color: $color-gray-concreate;
+  }
+
+  &__input-container {
+    position: relative;
+  }
+
+  &__input {
+    font: inherit;
+    height: 2.9rem;
+    width: 6rem;
+    border: 1px solid $color-gray-light;
+    border-radius: 4px;
+    font-family: $font-family;
+    padding: 1.7rem;
+  }
+
+  &__prefix {
+    font: inherit;
+    position: absolute;
+    top: 50%;
+    left: 0.8rem;
+    transform: translateY(-50%);
+  }
+}

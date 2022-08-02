@@ -1,104 +1,109 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
+import Select from 'react-select';
 import PropTypes from 'prop-types';
-import sprite from '../../assets/sprite.svg';
+import downArrow from '../../assets/down-arrow.svg';
 
 import './DropDown.scss';
 
-const DropDown = ({
-  title,
-  options,
-  placeholder,
-  isOpen,
-  onToggle,
-  onChange,
-  value: val,
-  disabled
-}) => {
-  const [value, setValue] = useState(val);
-  const optionContainerRef = useRef();
+const DownArrow = ({ selectProps }) => {
+  return (
+    <img
+      src={downArrow}
+      alt="down arrow"
+      style={{
+        transform: selectProps.menuIsOpen ? 'rotate(180deg)' : 'rotate(0)',
+        transition: 'transform 200ms ease-out'
+      }}
+    />
+  );
+};
 
-  const toggleHandler = event => {
-    if (!disabled) onToggle();
+const DropDown = ({ options, label, value, onChange, openDirection }) => {
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      fontSize: '1.6rem',
+      lineHeight: '2rem',
+      fontWeight: 400,
+      fontFamily: 'Noto Sans, sans-serif',
+      color: state.isFocused ? 'white' : '#1a1a1a',
+      backgroundColor: state.isFocused ? '#25C9EF' : 'transparent',
+      transition: 'all 200ms ease-out',
+      cursor: 'pointer'
+    }),
+    placeholder: (provided, state) => ({
+      ...provided,
+      fontSize: '1.6rem',
+      lineHeight: '2rem',
+      fontWeight: 400,
+      fontFamily: 'Noto Sans, sans-serif',
+      color: '#85898c'
+    }),
+    control: (provided, state) => ({
+      ...provided,
+      border: 'none',
+      boxShadow: 'none',
+      outline: 'none',
+      borderRadius: '0',
+      borderBottom: '1px solid #1a1a1a !important',
+      minHeight: '2.4rem',
+      cursor: 'pointer'
+    }),
+    indicatorSeparator: (provided, state) => ({ ...provided, display: 'none' }),
+    singleValue: (provided, state) => ({
+      ...provided,
+      fontSize: '1.6rem',
+      lineHeight: '2rem',
+      fontWeight: 400,
+      fontFamily: 'Noto Sans, sans-serif',
+      color: '#1a1a1a',
+      marginInline: 0
+    }),
+    valueContainer: (prodided, state) => ({ ...prodided, paddingInline: 0 }),
+    menu: (provided, state) => ({ ...provided, transition: 'all 200ms ease-out' })
   };
 
-  const selectionHandler = (option, event) => {
-    setValue(option);
-    onChange(option);
-    onToggle();
+  const selectionHanlder = option => {
+    onChange(option.value);
   };
-
-  useEffect(() => {
-    if (!val) {
-      setValue(null);
-    }
-  }, [options, val]);
 
   return (
     <div className="drop-down">
-      <h3 className="drop-down__title">{title}</h3>
-
-      <div className="drop-down__container">
-        <div
-          className="drop-down__selection-container"
-          onClick={toggleHandler}
-          onKeyUp={() => {}}
-          role="menu"
-          tabIndex={0}
-          data-id={title}
-          style={{ cursor: options.length === 0 || disabled ? 'not-allowed' : 'pointer' }}
-        >
-          <span className="drop-down__selection" style={{ color: value ? '#333333' : '#828282' }}>
-            {value !== null ? value.toLowerCase() : placeholder}
-          </span>
-          <span
-            className="drop-down__icon-box"
-            style={{ transform: options.length !== 0 && isOpen ? 'rotate(180deg)' : 'rotate(0)' }}
-          >
-            <svg className="drop-down__icon">
-              <use href={`${sprite}#down-arrow`} />
-            </svg>
-          </span>
-        </div>
-
-        <div
-          className="drop-down__option-container"
-          ref={optionContainerRef}
-          style={{ height: isOpen ? optionContainerRef.current.scrollHeight : '0px' }}
-        >
-          {options.map(option => (
-            <div className="drop-down__option" key={option}>
-              <input type="radio" className="drop-down__input" id={option} name={title} />
-              <label
-                htmlFor={option}
-                className="drop-down__label"
-                onClick={selectionHandler.bind(null, option)}
-                onKeyUp={() => {}}
-              >
-                {option.toLowerCase()}
-              </label>
-            </div>
-          ))}
-        </div>
+      <div className="drop-down__label">{label}</div>
+      <div className="drop-down__selector">
+        <Select
+          menuPlacement={openDirection === 'UP' ? 'top' : 'bottom'}
+          options={options}
+          styles={customStyles}
+          components={{ DropdownIndicator: DownArrow }}
+          isSearchable={false}
+          onChange={selectionHanlder}
+          maxMenuHeight="200px"
+          placeholder="Select Option"
+          value={value ? { value: value, label: value } : null}
+        />
       </div>
     </div>
   );
 };
 
 DropDown.defaultProps = {
-  title: '',
-  val: '',
-  disabled: false
+  value: '',
+  onChange: () => {},
+  openDirection: 'DOWN'
 };
 
 DropDown.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  title: PropTypes.string,
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onToggle: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  val: PropTypes.string,
-  disabled: PropTypes.bool
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired
+    })
+  ),
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  openDirection: PropTypes.oneOf(['UP', 'DOWN'])
 };
 
 export default DropDown;

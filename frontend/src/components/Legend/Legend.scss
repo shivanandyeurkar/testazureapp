@@ -1,0 +1,35 @@
+@import '../../styles/import';
+
+.legend {
+  // background-color: #ccc;
+  @include flex($jc: center, $fw: wrap);
+  margin-top: 1.5rem;
+
+  & > *:not(:first-child) {
+    margin-left: 2rem;
+  }
+
+  &__entry {
+    @include flex($ai: center);
+
+    & > *:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__color {
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 3px;
+  }
+
+  &__name {
+    font-family: $primary-font-family;
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, mini);
+    line-height: map-get($line-heights, mini);
+    color: $color-gray-charcoal;
+    text-transform: capitalize;
+  }
+}

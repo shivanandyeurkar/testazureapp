@@ -1,0 +1,14 @@
+[
+  {
+    "cardHeading": "Cost categories Overview",
+    "cardList": "Infrastructure costs includes all hardware & configuration services required for on-premise version",
+    "cardListItem": "Needles application expenses includes all software related expenses. On-premise application expenses include perp. licences, maintenance fees, and data backup expenses",
+    "cardListItems": "IT Admin includes all personnel and 3rd party expenses needed for maintaining Needles application"
+  },
+  {
+    "cardHeading": "Additional ROI and savings drivers not modeled",
+    "cardList": "Productivity and revenue enhancements due to increased uptime and ability to access software from anywhere",
+    "cardListItem": "Savings from implementations of future on-premise upgrade cycles",
+    "cardListItems": "Hardware savings from Cloud-based disaster recovery and backup"
+  }
+]

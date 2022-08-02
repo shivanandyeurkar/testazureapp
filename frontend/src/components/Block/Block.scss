@@ -1,0 +1,59 @@
+@import '../../styles/import';
+.card {
+  width: 66rem;
+  background: $color-light-gray;
+  border-radius: 1rem;
+  margin-top: 2.3rem;
+  height: 63rem;
+  &__container {
+    padding: 2.4rem;
+  }
+  &__element {
+    text-align: center;
+  }
+  &__text {
+    font-family: $primary-font-family;
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, smaller);
+    line-height: map-get($line-heights, medium);
+    color: $color-gray-charcoal;
+  }
+  &__period {
+    font-family: $font-family;
+    font-weight: map-get($font-weights, normal);
+    font-size: map-get($font-sizes, micro);
+    line-height: map-get($line-heights, micro);
+    color: $color-gray-charcoal;
+  }
+  &__envelop {
+    @include flex(flex, row, space-around, center);
+    margin-top: 3.2rem;
+  }
+}
+@include break(map-get($grid-breakpoints, xl)) {
+  .card {
+    width: 60rem;
+  }
+}
+@include break(map-get($grid-breakpoints, lg-xl)) {
+  .card {
+    width: 100%;
+    margin-bottom: 6.4rem;
+    &__container {
+      padding: 3.5rem;
+    }
+  }
+}
+@include break(map-get($grid-breakpoints, sm)) {
+  .card {
+    height: 100%;
+    margin-bottom: 5.6rem;
+    &__container {
+      padding: 2.4rem 1.6rem;
+    }
+    &__envelop {
+      margin-top: 2.4rem;
+      @include flex(flex, column, center, center);
+    }
+  }
+}

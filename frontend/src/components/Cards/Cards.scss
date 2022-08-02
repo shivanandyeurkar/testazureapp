@@ -1,0 +1,101 @@
+@import '../../styles/import';
+
+.cards {
+  background: $color-light-gray;
+  min-height: 10rem;
+  position: relative;
+  background-color: $color-light-gray;
+  // ::before {
+  //   content: '';
+  //   position: absolute;
+  //   height: 100%;
+  //   width: 200vw;
+  //   left: -100vw;
+  //   z-index: -1;
+  // }
+  &__outercontainer {
+    padding: 3.5rem 4.6rem;
+    @include flex(flex, row, space-between);
+  }
+  &__content {
+    max-width: 50%;
+    margin-right: 3.6rem;
+  }
+  &__heading {
+    font-family: $primary-font-family;
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, smaller);
+    line-height: map-get($line-heights, medium);
+    color: $color-gray-charcoal;
+    margin-bottom: 0.8rem;
+  }
+  &__para {
+    font-family: $font-family;
+    font-weight: map-get($font-weights, light);
+    font-size: map-get($font-sizes, smallest);
+    line-height: map-get($line-heights, smallest);
+    color: $color-gray-charcoal;
+    margin-bottom: 0.8rem;
+  }
+  &__subtext {
+    margin-left: 3rem;
+  }
+  &__item {
+    font-family: $font-family;
+    font-weight: map-get($font-weights, light);
+    font-size: map-get($font-sizes, smallest);
+    line-height: map-get($line-heights, smallest);
+    color: $color-gray-charcoal;
+    margin-bottom: 0.8rem;
+  }
+  .nomargin {
+    margin-right: 0;
+  }
+}
+@include break(map-get($container-max-widths, ls)) {
+  .cards {
+    &__outercontainer {
+      display: block;
+      padding: 2.4rem 3.6rem;
+    }
+    &__content {
+      max-width: 100%;
+      margin-bottom: 2.4rem;
+    }
+    &__heading {
+      font-size: map-get($font-sizes, medium);
+      line-height: map-get($line-heights, big);
+      margin-bottom: 1.2rem;
+    }
+    &__subtext {
+      margin-left: 2rem;
+    }
+  }
+}
+
+@include break(map-get($grid-breakpoints, sm)) {
+  .cards {
+    &__outercontainer {
+      padding: 2.4rem 1.5rem;
+    }
+    &__content {
+      margin-bottom: 3.2rem;
+    }
+    &__heading {
+      font-size: map-get($font-sizes, smaller);
+      line-height: map-get($line-heights, medium);
+      margin-bottom: 0.8rem;
+    }
+    &__para {
+      font-size: map-get($font-sizes, mini);
+      line-height: map-get($line-heights, mini);
+    }
+    &__subtext {
+      margin-left: 2rem;
+    }
+    &__item {
+      font-size: map-get($font-sizes, mini);
+      line-height: map-get($line-heights, mini);
+    }
+  }
+}

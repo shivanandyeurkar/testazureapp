@@ -1,42 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './Button.scss';
 
-const Button = ({ label, type, onClick, buttonStyle, disabled }) => {
-  let buttonStyleClass = '';
+/* eslint react/button-has-type:0 */
+const Button = ({ type, label, disabled, onClick, butttonStyle, freeSize }) => {
+  let classNames = '';
 
   /* eslint no-lonely-if:0 */
-  if (disabled) {
-    if (buttonStyle === 'PRIMARY') buttonStyleClass = 'btn--primary-disabled';
-    else buttonStyleClass = 'btn--secondary-disabled';
+  if (butttonStyle === 'PRIMARY') {
+    if (!disabled) classNames += 'button--primary';
+    else classNames += 'button--primary-disabled';
   } else {
-    if (buttonStyle === 'PRIMARY') buttonStyleClass = 'btn--primary';
-    else buttonStyleClass = 'btn--secondary';
+    if (!disabled) classNames += 'button--secondary';
+    else classNames += 'button--secondary-disabled';
   }
 
+  if (freeSize) classNames += ' button--free-size';
+  else classNames += ' button--fixed-size';
+
   return (
-    <button
-      className={`btn ${buttonStyleClass}`}
-      onClick={onClick}
-      type={type === 'button' ? 'button' : 'submit'}
-      disabled={disabled}
-    >
+    <button type={type} className={`button ${classNames}`} disabled={disabled} onClick={onClick}>
       {label}
     </button>
   );
 };
 
 Button.defaultProps = {
+  disabled: false,
   onClick: () => {},
-  disabled: false
+  butttonStyle: 'PRIMARY',
+  freeSize: false
 };
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['button', 'submit']).isRequired,
+  butttonStyle: PropTypes.oneOf(['PRIMARY', 'SECONDARY']),
+  label: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func,
-  buttonStyle: PropTypes.oneOf(['PRIMARY', 'SECONDARY']).isRequired,
-  disabled: PropTypes.bool
+  freeSize: PropTypes.bool
 };
 
 export default Button;

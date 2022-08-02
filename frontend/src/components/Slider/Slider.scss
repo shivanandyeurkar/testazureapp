@@ -1,0 +1,98 @@
+@import '../../styles/import';
+
+.slider {
+  width: 100%;
+
+  &__top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    color: $color-gray-concreate;
+    // flex: 1 1 auto;
+  }
+
+  &__input {
+    height: 2.9rem;
+    width: 6rem;
+    border-radius: 4px;
+    border: 1px solid $color-gray-light;
+    font-family: Noto Sans, sans-serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 400;
+    color: $color-gray-charcoal;
+    text-align: center;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__bottom-section {
+    margin-top: 0.9rem;
+  }
+
+  &__slider-box {
+    position: relative;
+    // height: 1.8rem;
+  }
+
+  &__slider {
+    -webkit-appearance: none; // This is to hide the default slider track (also works on firefox) and the color is controlled through JS using linear-gradient.
+    width: 100%;
+    height: 2px;
+    outline: none;
+    //accent-color: $color-primary; // colors the thumb in chrome and edge but not in others, not even in other webkit browsers like opera and safari.
+    border-radius: 100px;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 1.8rem;
+      width: 1.8rem;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: $color-primary;
+    }
+
+    &::-moz-range-thumb {
+      background-color: $color-primary;
+      box-sizing: border-box;
+      border-radius: 100px;
+      height: 1.8rem;
+      width: 1.8rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &__range-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    font-family: Noto Sans, sans-serif;
+    color: $color-gray-concreate;
+    margin-top: 4px;
+    pointer-events: none;
+  }
+
+  &__from {
+  }
+
+  &__to {
+  }
+}
