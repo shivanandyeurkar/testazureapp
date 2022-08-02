@@ -1,0 +1,25 @@
+{
+  "name": "elec-calculator",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "format": "prettier --write **/*.{js,ts,json}"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1136.0",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "google-auth-library": "^7.14.1",
+    "lodash": "^4.17.21",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "serverless-offline": "^8.2.0"
+  }
+}

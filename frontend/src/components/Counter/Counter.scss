@@ -1,0 +1,49 @@
+@import '../../styles/import';
+
+.count {
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.5rem;
+
+  &__btn {
+    height: 3rem;
+    width: 3rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color-gray-mid;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 50ms ease-in;
+
+    &:active {
+      transform: scale((0.9));
+    }
+  }
+
+  &__icon {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  &__count {
+    font-family: Public Sans, sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    color: $color-gray-black;
+    border-radius: 4px;
+    width: 6ch;
+    border: 1px solid $color-gray-mid;
+    text-align: center;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+}

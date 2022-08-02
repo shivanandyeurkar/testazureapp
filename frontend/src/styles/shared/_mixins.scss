@@ -1,0 +1,64 @@
+/**
+* Media break 
+* Example: 
+* @include break(580px) { .className: {width: 100% } } 
+* @include break(minWidth, maxWidth) {.className: {width: 100% } } 
+**/
+
+@mixin break($args...) {
+  @if length($args) ==1 {
+    @media (max-width: nth($args, 1)) {
+      @content;
+    }
+  }
+
+  @if length($args) ==2 {
+    @media (min-width: nth($args, 1)) and (max-width: nth($args, 2)) {
+      @content;
+    }
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin translateXY($valueX, $valueY) {
+  -ms-transform: translate($valueX, $valueY);
+  -webkit-transform: translate($valueX, $valueY);
+  -moz-transform: translate($valueX, $valueY);
+  transform: translate($valueX, $valueY);
+}
+
+@mixin box-shadows($x, $y, $z, $offset, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $x $y $z $offset $color;
+    -moz-box-shadow: inset $x $y $z $offset $color;
+    box-shadow: inset $x $y $z $offset $color;
+  } @else {
+    -webkit-box-shadow: $x $y $z $offset $color;
+    -moz-box-shadow: $x $y $z $offset $color;
+    box-shadow: $x $y $z $offset $color;
+  }
+}
+
+/*
+This is a shorthand for all the flex related properties. The defaults will be used if value for a particular property isnt provided
+*/
+
+@mixin flex($dis: flex, $dir: row, $jc: flex-start, $ai: stretch, $fw: nowrap, $ac: stretch) {
+  display: $dis;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $fw;
+  align-content: $ac;
+}

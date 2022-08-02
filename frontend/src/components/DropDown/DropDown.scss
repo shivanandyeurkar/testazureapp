@@ -1,0 +1,96 @@
+@import '../../styles/import';
+
+.drop-down {
+  &__title {
+    font-weight: 700;
+    color: $color-gray-dark;
+    margin-bottom: 0.8rem;
+  }
+
+  &__container {
+    height: 4.6rem;
+    border: 1px solid $color-gray-lighter;
+    border-radius: 0.5rem;
+    position: relative;
+  }
+
+  &__selection-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem 0 1.2rem;
+    cursor: pointer;
+  }
+
+  &__selection {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: $color-gray-dark;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
+  &__icon-box {
+    display: flex;
+    transition: all 100ms ease-out;
+  }
+
+  &__icon {
+    height: 1rem;
+    width: 1rem;
+    color: $color-gray-black;
+  }
+
+  &__option-container {
+    position: absolute;
+    top: calc(100% + 1px);
+    z-index: 10;
+    width: 100%;
+    max-height: 20rem;
+    overflow-y: auto;
+    border-radius: 1rem;
+    background-color: $color-gray-white;
+    padding-inline: 0.5rem;
+    box-shadow: 0px 0.5rem 2rem -0.5rem rgba($color-gray-black, 0.15);
+    height: 0;
+    transition: all 100ms ease-out;
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 2px;
+    }
+
+    &:first-child {
+      margin-top: 0.5rem;
+    }
+    &:last-child {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    height: 100%;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: $color-gray-dark;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: all 200ms ease-out;
+    text-transform: capitalize;
+
+    &:hover {
+      background-color: $color-gray-lightest;
+    }
+  }
+}

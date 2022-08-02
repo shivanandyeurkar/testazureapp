@@ -1,0 +1,30 @@
+@import '../../styles/import';
+
+.input {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    height: 4.4rem;
+    padding: 0 1.2rem;
+    border: 1px solid $color-gray-lighter;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: $color-gray-dark;
+    font-weight: 400;
+    width: 100%;
+
+    &::-webkit-input-placeholder {
+      color: $color-gray-mid-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 700;
+    color: $color-gray-dark;
+    margin-bottom: 0.8rem;
+  }
+}

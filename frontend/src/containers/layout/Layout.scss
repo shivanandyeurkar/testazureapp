@@ -1,0 +1,12 @@
+@import '../../styles/import';
+
+.calc-page {
+  &__wrapper {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  &__container {
+    padding: 0 3.2rem;
+  }
+}

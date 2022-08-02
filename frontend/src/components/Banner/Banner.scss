@@ -1,0 +1,28 @@
+@import '../../styles/import';
+
+.banner {
+  min-height: 36rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 4.8rem;
+  margin-bottom: -17.3rem;
+  background-image: url('../../assets/colonial-electric.jpg'),
+    linear-gradient(210deg, #114584 0%, #2688e5 100%);
+  background-blend-mode: soft-light;
+  background-size: cover;
+
+  &__heading {
+    font-family: Lato, sans-serif;
+    color: $color-gray-lightest;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 400;
+    color: $color-gray-lightest;
+  }
+}
